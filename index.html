@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>팔로워 합치기</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        margin: 0;
+        padding: 24px;
+        background: #f3f4f6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .card {
+        width: 480px;
+        max-width: 100%;
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 20px 20px 16px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: 18px;
+      }
+
+      p.desc {
+        margin: 0 0 12px;
+        font-size: 13px;
+        color: #6b7280;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 120px;
+        resize: vertical;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        font-size: 12px;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid #d1d5db;
+        box-sizing: border-box;
+      }
+
+      textarea:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.1);
+      }
+
+      button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 10px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        border: none;
+        background: #2563eb;
+        color: #ffffff;
+        font-size: 13px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #1d4ed8;
+      }
+
+      .out-label {
+        margin-top: 14px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .status {
+        margin-top: 6px;
+        font-size: 12px;
+        color: #6b7280;
+      }
+
+      .output {
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>팔로워 합치기</h1>
+
+      <label for="inputCodes" style="font-size: 13px; font-weight: 600;"
+        >1. 합칠 코드들</label
+      >
+      <textarea
+        id="inputCodes"
+        placeholder="예시)
+4|........
+4|........"
+      ></textarea>
+
+      <button id="btnMerge" type="button">코드 합치기</button>
+
+      <div class="out-label">2. 합쳐진 코드</div>
+      <textarea id="outputCode" class="output" readonly></textarea>
+
+      <div id="status" class="status"></div>
+    </div>
+
+    <script src="merge.js"></script>
+  </body>
+</html>
